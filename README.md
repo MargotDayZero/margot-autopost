@@ -36,3 +36,19 @@ Actions, **Publish today's post**, enter that draft's date.
 ## Controls
 Skip a day: close the issue. Pause: disable the workflows. Edit a caption before it posts:
 edit `drafts/<date>/post.json`.
+
+## Threads (text-only daily tip)
+Separate from the Instagram flow above, same approval idea. Never touches the Instagram token.
+
+| When (Eastern) | What happens | Your part |
+|---|---|---|
+| ~6:30 PM the night before | Claude writes tomorrow's text-only tip (450 characters or fewer, ends with "Day one counts."). GitHub opens an issue **"Threads for YYYY-MM-DD"** with the exact text. | Nothing. |
+| ~11 AM (noon in daylight time) | If that issue is still open, the tip is posted to Threads and the issue closes with a link. | Nothing. |
+| To skip a day | Close that day's issue before it posts. | One tap. |
+| Mondays | The 60-day Threads token is refreshed and stored. | Nothing. |
+
+Monday and Friday tips softly mention the free sheet or the workbook (link in bio). Other days are a pure tip.
+Same content rules as the carousel (`BANNED`, no income claims, no invented history). Edit `SYSTEM` and `FORMATS` in `scripts/threads_generate.py`.
+
+Extra secrets: `THREADS_USER_ID`, `THREADS_ACCESS_TOKEN` (long-lived Threads token, never pasted into chat), `GH_SECRETS_TOKEN` (fine-grained token for this repo with Secrets read/write, needed for the weekly refresh).
+Workflows: `threads-draft.yml`, `threads-publish.yml`, `threads-refresh-token.yml`. Test: Actions, **Threads - draft tomorrow's tip**, Run workflow.
