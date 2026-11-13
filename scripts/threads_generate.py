@@ -74,8 +74,19 @@ her own (see the rules below).
 Hard rules:
 - The whole post is between 280 and {MAX_CHARS} characters, including line breaks and the sign-off.
 - No emoji, no hashtags, no links, no special symbols.
+- NEVER use a contrast structure to make a point: no "it's not X, it's Y", "not just X but Y",
+  "X isn't Y, it's Z", "no X, no Y, just Z", "less about X, more about Y", "rather than", "stop X, start Y",
+  "doesn't mean X, it means Y". State only the true half as a plain claim, once.
+- No "Here's the thing", "Let's be honest", "Let that sink in", no tidy motivational moral at the end,
+  no rhetorical triplets for rhythm (a plain list of 2 or 4 things is fine), no stacked one-line
+  paragraphs. Do not use the words journey, navigate, unlock, empower, resilience, transform or thrive.
+- Every post needs ONE concrete anchor: a specific object, form, bill, time of day or small task
+  (the mail still addressed to two people, a store card you forgot about, the streaming login, the
+  junk drawer of statements, a utility bill, the password you reuse). Take one plain position and
+  vary sentence length naturally.
 - Never use em dashes or en dashes. Use commas or periods.
-- The post ends with the sign-off "{SIGNOFF}" as its own last line.
+- Offer days end with the sign-off "{SIGNOFF}" as its own last line. Growth days end with one specific
+  question (the sign-off is optional there). Never stack a motivational line before the sign-off.
 - Never say or imply Margot is AI, an AI creator, a bot, a persona or generated. Never mention
   AI tools.
 - General education only. Never give personalized financial, legal or tax advice. Never tell
@@ -101,16 +112,38 @@ SCHEMA = {
     "additionalProperties": False,
 }
 
+# Sentence shapes that read as machine-written (contrastive reveals and friends). A post that
+# matches any of these is rejected and Claude is asked to rewrite it.
+NEG = r"(?:\b(?:not|isn't|aren't|wasn't|weren't|doesn't|don't|didn't|never|no)\b|n't\b)"
+TELLS = [
+    (re.compile(NEG + r"[^.!?\n]{0,60}[.!?;,]\s+(?:and\s+)?(?:it's|it is|it (?:\w+ )?(?:just )?means|you're|you are|you just|they're|this is|but|just|instead|more)\b", re.I),
+     'a "not X, it\'s Y" contrast'),
+    (re.compile(r"\bnot (?:just|only|merely)\b", re.I), '"not just X but Y"'),
+    (re.compile(r"\b(?:isn't|aren't|wasn't|weren't|doesn't mean)\b[^.!?\n]{1,50}[,.]\s*\w+(?:\s\w+)?\s+(?:is|are|was|means)\b", re.I), '"X isn\'t Y, Z is Y"'),
+    (re.compile(r"\b(?:no|not)\s+\w+(?:\s+\w+){0,3},\s*(?:no|not)\s+\w+[^.!?]{0,40}[,.]?\s*(?:just|only)\b", re.I), '"no X, no Y, just Z"'),
+    (re.compile(r"\bless (?:about )?[^.,!?]{1,40},\s*more\b|\brather than\b", re.I), '"less X, more Y" or "rather than"'),
+    (re.compile(r"\bstop\b[^.!?]{1,50}[.!?]\s+start\b", re.I), '"Stop X. Start Y."'),
+    (re.compile(r"\b(?:here's the thing|let's be honest|let that sink in|read that again|the truth is|the real (?:\w+ )?(?:is|issue|problem))\b", re.I), "a drama opener"),
+    (re.compile(r"\b(?:journey|navigat\w+|unlock\w*|game[- ]changer|empower\w*|resilien\w+|transform\w*|thrive)\b", re.I), "an abstract empowerment word"),
+]
+
 HASHTAG_OR_LINK = re.compile(r"(^|\s)#\w|https?://|www\.", re.I)
 
 
 def validate(post: dict, needs_link_in_bio: bool, needs_engagement: bool = False) -> dict:
+    needs_signoff = not needs_engagement  # growth posts may end on a question instead
     text = clean(post["text"], emoji=True)
     text = re.sub(r"[ \t]+\n", "\n", text)
     text = re.sub(r"\n{3,}", "\n\n", text)
     post["topic"] = clean(post["topic"], emoji=True)
-    if not text.rstrip().endswith(SIGNOFF):
+    if needs_signoff and not text.rstrip().endswith(SIGNOFF):
         raise InvalidPost(f'the post must end with "{SIGNOFF}" as its own last line')
+    if not needs_signoff and not (text.rstrip().endswith(SIGNOFF) or text.rstrip().endswith("?")):
+        raise InvalidPost(f'a growth post must end with a question or with "{SIGNOFF}"')
+    for rx, label in TELLS:
+        m = rx.search(text)
+        if m:
+            raise InvalidPost(f"it contains {label}: {m.group(0)!r}. Rewrite that part as one plain true statement")
     if len(text) > MAX_CHARS:
         raise InvalidPost(f"the post is {len(text)} characters; it must be {MAX_CHARS} or fewer")
     if len(text) < 250:
