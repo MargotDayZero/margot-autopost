@@ -1,4 +1,7 @@
-"""Nightly: write tomorrow's text-only Threads tip and the review-issue body.
+"""Nightly: pick tomorrow's text-only Threads post and write the review-issue body.
+
+Library first: the next unused reviewed post for that weekday in content/threads_library.json.
+When the library has none left for that weekday, Claude writes a fresh one.
 
 Usage: python scripts/threads_draft.py [YYYY-MM-DD]   (defaults to tomorrow, US Eastern)
 Outputs threads/<date>.json and threads/<date>.md
@@ -14,6 +17,16 @@ from threads_generate import generate
 
 THREADS = ROOT / "threads"
 THREADS_HISTORY = ROOT / "content" / "threads_history.json"
+LIBRARY = ROOT / "content" / "threads_library.json"
+
+
+def next_from_library(weekday: int, used_topics: set[str]) -> dict | None:
+    if not LIBRARY.exists():
+        return None
+    for post in json.loads(LIBRARY.read_text()):
+        if post["weekday"] == weekday and post["topic"] not in used_topics:
+            return {"topic": post["topic"], "text": post["text"]}
+    return None
 
 
 def main() -> None:
@@ -26,17 +39,21 @@ def main() -> None:
 
     history = json.loads(THREADS_HISTORY.read_text()) if THREADS_HISTORY.exists() else []
     recent = [h["topic"] for h in history] + [h["topic"] for h in load_history()]
-    post = generate(day.weekday(), day.toordinal(), recent, day.strftime("%A, %B %d"))
+    post = next_from_library(day.weekday(), {h["topic"] for h in history})
+    source = "library"
+    if post is None:
+        source = "claude"
+        post = generate(day.weekday(), day.toordinal(), recent, day.strftime("%A, %B %d"))
 
-    record = {"date": day.isoformat(), "topic": post["topic"], "text": post["text"]}
+    record = {"date": day.isoformat(), "topic": post["topic"], "text": post["text"], "source": source}
     out.write_text(json.dumps(record, indent=2, ensure_ascii=False) + "\n")
-    history.append({"date": record["date"], "topic": record["topic"]})
+    history.append({"date": record["date"], "topic": record["topic"], "source": source})
     THREADS_HISTORY.write_text(json.dumps(history, indent=2, ensure_ascii=False) + "\n")
 
     (THREADS / f"{day.isoformat()}.md").write_text(
         f"**Scheduled to post on Threads {day.strftime('%A, %B %d')} around noon Eastern.**\n\n"
         f"To skip it, just **close this issue**. Do nothing and it posts automatically.\n\n"
-        f"**Topic:** {post['topic']}\n\n**Post** ({len(post['text'])} characters):\n\n```\n{post['text']}\n```\n"
+        f"**Topic:** {post['topic']} ({'from the reviewed library' if source == 'library' else 'written fresh'})\n\n**Post** ({len(post['text'])} characters):\n\n```\n{post['text']}\n```\n"
     )
     print(f"Drafted Threads post for {day}: {post['topic']}")
 
