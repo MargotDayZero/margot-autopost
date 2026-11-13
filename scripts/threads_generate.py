@@ -21,12 +21,23 @@ FORMATS = [
     "A tip with a made-up example in one line (say 'made-up numbers' if you use any).",
 ]
 
-# Mention the offer on two days a week only; the other days are pure tip.
+# The account's goal is to sell the workbook and grow a following. Offer days (Mon, Wed, Fri, Sun)
+# give a tip and then softly point to a product. Growth days (Tue, Thu, Sat) are pure value written
+# to be saved, shared or replied to, with no product mention.
 OFFERS = {
-    0: "Add one soft line near the end: the free Three Numbers Starter Sheet is at the link in bio.",
-    4: "Add one soft line near the end: the $17 Day Zero Workbook is at the link in bio.",
+    0: "Near the end, softly point to the free Three Numbers Starter Sheet (a one-page worksheet, free) at the link in bio.",
+    2: "Near the end, softly point to the $17 Day Zero Workbook (32 pages: the Three Numbers, Where It Went, Keep Cut Earn Build, The First Hour, the Monthly Twenty with a 12-month tracker, plus bonuses: Fifteen-Minute Start, Year-at-a-Glance Bill Tracker, Dreaded Call Scripts, Questions for a Money Helper) at the link in bio. Name ONE specific part that fits today's tip. Do not describe anything that is not in this list.",
+    4: "Near the end, softly point to the $17 Day Zero Workbook (32 pages: the Three Numbers, Where It Went, Keep Cut Earn Build, The First Hour, the Monthly Twenty with a 12-month tracker, plus bonuses: Fifteen-Minute Start, Year-at-a-Glance Bill Tracker, Dreaded Call Scripts, Questions for a Money Helper) at the link in bio. Name ONE specific part that fits today's tip. Do not describe anything that is not in this list.",
+    6: "Near the end, softly point to the free Three Numbers Starter Sheet (a one-page worksheet, free) at the link in bio.",
 }
-NO_OFFER = "Do not mention any product, sheet, workbook or link today. Pure tip."
+NO_OFFER = (
+    "Do not mention any product, sheet, workbook or link today. This is a growth post: write it so a "
+    "reader wants to save it, send it to a friend, or reply. End the body (before the sign-off) with a "
+    "simple, easy-to-answer question or a line like 'Save this for later' or 'Send this to a friend who needs it'."
+)
+# On these days the post must invite a reply, save or share (checked below).
+GROWTH_DAYS = {1, 3, 5}
+ENGAGE = re.compile(r"\?|follow|save this|share|send this|reply|below", re.I)
 
 SYSTEM = f"""You write short, text-only Threads posts for Margot Ellison (@margotdayzero), a 41-year-old
 creator who helps women start over financially after divorce. Her tagline is "Zero is a
@@ -37,6 +48,11 @@ explanation.
 
 Her method: the Three Numbers (what's coming in, what goes out, how many months you could keep
 going), then Keep, Cut, Earn, Build. The Worth-It Rule: protect what's worth it first.
+
+The account's goals are to grow a following of women starting over financially and to sell her
+$17 Day Zero Workbook, so every post should be easy to relate to, worth saving or sharing, and
+honest. Selling is gentle: one soft line, never pushy, no fake urgency, no testimonials, no
+claims about results.
 
 Each post is ONE practical tip a reader can act on in about twenty minutes or less. It should
 read like a thought from a friend, not an ad or a lecture. Plain text only, written to be read
@@ -75,7 +91,7 @@ SCHEMA = {
 HASHTAG_OR_LINK = re.compile(r"(^|\s)#\w|https?://|www\.", re.I)
 
 
-def validate(post: dict, needs_link_in_bio: bool) -> dict:
+def validate(post: dict, needs_link_in_bio: bool, needs_engagement: bool = False) -> dict:
     text = clean(post["text"], emoji=True)
     text = re.sub(r"[ \t]+\n", "\n", text)
     text = re.sub(r"\n{3,}", "\n\n", text)
@@ -92,6 +108,8 @@ def validate(post: dict, needs_link_in_bio: bool) -> dict:
         raise InvalidPost('today the post must softly mention the offer with "link in bio"')
     if not needs_link_in_bio and "link in bio" in text.lower():
         raise InvalidPost("today the post must not mention the link in bio")
+    if needs_engagement and not ENGAGE.search(text):
+        raise InvalidPost("today the post must invite a reply, a save or a share (a question works well)")
     m = BANNED.search(json.dumps({"topic": post["topic"], "text": text}, ensure_ascii=False))
     if m:
         raise InvalidPost(f"contains blocked wording: {m.group(0)!r}")
@@ -131,7 +149,7 @@ def generate(weekday: int, day_number: int, recent_topics: list[str], date_label
             continue
         text = next(b.text for b in resp.content if b.type == "text")
         try:
-            return validate(json.loads(text), needs_link_in_bio=weekday in OFFERS)
+            return validate(json.loads(text), needs_link_in_bio=weekday in OFFERS, needs_engagement=weekday in GROWTH_DAYS)
         except (InvalidPost, json.JSONDecodeError) as e:
             last_err = str(e)
     raise InvalidPost(f"gave up after 3 attempts: {last_err}")

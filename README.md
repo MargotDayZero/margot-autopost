@@ -47,7 +47,7 @@ Separate from the Instagram flow above, same approval idea. Never touches the In
 | To skip a day | Close that day's issue before it posts. | One tap. |
 | Mondays | The 60-day Threads token is refreshed and stored. | Nothing. |
 
-Monday and Friday tips softly mention the free sheet or the workbook (link in bio). Other days are a pure tip.
+Goal: sell the workbook and grow a following. Mon and Sun tips point to the free Starter Sheet, Wed and Fri to one specific part of the $17 workbook (link in bio). Tue, Thu and Sat are pure value written for replies, saves and shares. A reviewed 28-post library is in `content/threads_library.json`.
 Same content rules as the carousel (`BANNED`, no income claims, no invented history). Edit `SYSTEM` and `FORMATS` in `scripts/threads_generate.py`.
 
 Extra secrets: `THREADS_USER_ID`, `THREADS_ACCESS_TOKEN` (long-lived Threads token, never pasted into chat), `GH_SECRETS_TOKEN` (fine-grained token for this repo with Secrets read/write, needed for the weekly refresh).
