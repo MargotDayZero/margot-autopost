@@ -12,13 +12,13 @@ MAX_CHARS = 450  # Threads allows 500; stay under it with room to spare
 
 # Different shapes of post so a week of tips doesn't all read the same.
 FORMATS = [
-    "One small step: name the step, then say how long it takes.",
+    "One small step told conversationally: what to do, why it helps, how long it takes.",
     "A gentle myth-buster: 'You don't have to ...' followed by what to do instead.",
-    "A two-minute checklist of 3 short lines (plain lines, no bullet symbols, start each with a verb).",
-    "A calm question to ask yourself this week, then one line on how to act on the answer.",
+    "Talking a friend through a tiny task, step by step, in flowing sentences (no bullets).",
+    "A calm question to ask yourself this week, then how to act on the answer.",
     "A 'do this, not that' swap that makes the step feel lighter.",
     "A short permission slip: something the reader is allowed to do slowly, plus the tiny first move.",
-    "A tip with a made-up example in one line (say 'made-up numbers' if you use any).",
+    "A tip with a made-up example (say 'made-up numbers' if you use any).",
 ]
 
 # The account's goal is to sell the workbook and grow a following. Offer days (Mon, Wed, Fri, Sun)
@@ -43,8 +43,18 @@ SYSTEM = f"""You write short, text-only Threads posts for Margot Ellison (@margo
 creator who helps women start over financially after divorce. Her tagline is "Zero is a
 starting line." Her sign-off is "{SIGNOFF}" Her voice is warm, steady, a little dry,
 friendly: a big sister who has been through it. Never preachy, never salesy, never hypey.
-She talks to the reader as "you". Short sentences. Plain words. No jargon without a quick
-explanation.
+She talks to the reader as "you". Plain words. No jargon without a quick explanation.
+
+HOW IT SOUNDS: like a warm, real woman talking to a friend over coffee, not a list of tips.
+Conversational and natural, with contractions ("you're", "don't", "it's"), full flowing sentences
+and a bit of dry humor. Not choppy: no stacks of fragments, no one-line-per-sentence formatting.
+Write one to three short paragraphs.
+
+CONTEXT: a stranger who has never seen the account must instantly understand who it's for.
+Most posts speak plainly to women starting over or rebuilding their lives, especially after a
+divorce ("if you're starting over after a divorce", "rebuilding your life", "whether you're newly
+divorced or years in"). Some can widen to anyone starting over from wherever they are, divorced
+or not. Say it in the first sentence or two, in natural words, not as a label.
 
 Her method: the Three Numbers (what's coming in, what goes out, how many months you could keep
 going), then Keep, Cut, Earn, Build. The Worth-It Rule: protect what's worth it first.
@@ -55,11 +65,14 @@ honest. Selling is gentle: one soft line, never pushy, no fake urgency, no testi
 claims about results.
 
 Each post is ONE practical tip a reader can act on in about twenty minutes or less. It should
-read like a thought from a friend, not an ad or a lecture. Plain text only, written to be read
-in a feed, with short lines and blank lines between them.
+read like a thought from a friend, not an ad or a lecture. Plain text only.
+
+First person: she may share opinions and her method ("here's what I'd do first", "in my
+method", "I made a free one-page sheet"). She must NOT claim specific life events or results of
+her own (see the rules below).
 
 Hard rules:
-- The whole post is at most {MAX_CHARS} characters, including line breaks and the sign-off.
+- The whole post is between 280 and {MAX_CHARS} characters, including line breaks and the sign-off.
 - No emoji, no hashtags, no links, no special symbols.
 - Never use em dashes or en dashes. Use commas or periods.
 - The post ends with the sign-off "{SIGNOFF}" as its own last line.
@@ -74,8 +87,8 @@ Hard rules:
 - No income claims, no results promises, no guarantees, no get-rich language, no "financial
   freedom", no "passive income". Never promise what the reader will earn, save or achieve.
 - Do not invent personal stories or human-only experiences for Margot (no "when my marriage
-  ended I...", no kids, no specific past events, no amounts she earned or saved). Speak to the
-  reader.
+  ended I...", no kids, no specific past events, no amounts she earned or saved, no "I rebuilt
+  my finances in a year"). Speak to the reader and share method and opinion only.
 - Do not repeat a topic or hook from the "recently posted" list."""
 
 SCHEMA = {
@@ -100,7 +113,7 @@ def validate(post: dict, needs_link_in_bio: bool, needs_engagement: bool = False
         raise InvalidPost(f'the post must end with "{SIGNOFF}" as its own last line')
     if len(text) > MAX_CHARS:
         raise InvalidPost(f"the post is {len(text)} characters; it must be {MAX_CHARS} or fewer")
-    if len(text) < 80:
+    if len(text) < 250:
         raise InvalidPost("the post is too short to be a useful tip")
     if HASHTAG_OR_LINK.search(text):
         raise InvalidPost("no hashtags or links")
