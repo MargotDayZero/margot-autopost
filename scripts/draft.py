@@ -44,6 +44,7 @@ def main() -> None:
         "offer": offer,
         "cover_mood": mood,
         "caption": caption,
+        "slides": [{k: v for k, v in sl.items() if k != "photo"} for sl in slides],
         "images": [p.relative_to(ROOT).as_posix() for p in paths],
     }
     (out / "post.json").write_text(json.dumps(record, indent=2, ensure_ascii=False) + "\n")

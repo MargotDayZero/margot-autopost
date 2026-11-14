@@ -16,7 +16,6 @@ To skip it, just **close this issue**. Do nothing and it posts automatically.
 
 ```
 Where did the money go? That is the only question for today.
-Not why. Not what you should have done.
 Open your bank app, take the last 30 days, and give each spend a one-word label.
 Group them into a few piles, add them up roughly, and stop when 20 minutes are up.
 Save this for a quiet hour this week.

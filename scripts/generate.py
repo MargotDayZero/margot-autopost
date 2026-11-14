@@ -6,6 +6,8 @@ import re
 
 import anthropic
 
+from aitells import find_tell
+
 MODEL = "claude-opus-5-5"
 
 # Content pillars rotate by weekday (Monday = 0), drawn from Margot's framework.
@@ -92,6 +94,13 @@ Hard rules:
   National Domestic Violence Hotline, 1-800-799-7233, in the caption only.
 - Keep slide text short: titles max 60 characters, body max 200 characters, list items max
   70 characters each.
+- NEVER use a contrast structure to make a point, on slides or in the caption: no "it's not X, it's Y",
+  "not just X but Y", "X isn't Y, it's Z", "Not this. Not that. Just this.", "no more X, no more Y",
+  "less about X, more about Y", "rather than", "stop X, start Y", "doesn't mean X, it means Y".
+  State only the true half as one plain claim. Also avoid "Here's the thing", "Let's be honest",
+  rhetorical triplets for rhythm, tidy motivational morals, and the words journey, navigate, unlock,
+  empower, resilience, transform, thrive. Give each post one concrete anchor (a specific bill, form,
+  statement, account, time of day or small task) and sound like a person talking, not a template.
 - Do not repeat a topic or hook from the "recently posted" list.
 - Caption: a gentle hook line, 2 to 4 short lines explaining the step, a save reminder, a
   pointer to the offer via "link in bio", and the sign-off "Day one counts." as its own line.
@@ -194,6 +203,15 @@ def validate(post: dict) -> dict:
     if "link in bio" not in caption.lower():
         raise InvalidPost('the caption must point to the offer with "link in bio"')
     post["caption"] = caption
+
+    # No machine-sounding contrast shapes ("not X, it's Y", "Not this. Not that.") in any field.
+    fields = [post["cover_title"], post["cover_subtitle"], post["caption"]]
+    for sl in post["slides"]:
+        fields += [sl["kicker"], sl["title"], sl["body"], *sl["items"]]
+    for f in fields:
+        hit = find_tell(f)
+        if hit:
+            raise InvalidPost(f"it contains {hit[0]}: {hit[1]!r}. Rewrite that part as one plain true statement")
 
     all_text = json.dumps(post, ensure_ascii=False)
     m = BANNED.search(all_text)

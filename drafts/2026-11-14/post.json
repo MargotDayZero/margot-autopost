@@ -4,7 +4,7 @@
   "pillar": "STARTING OVER: the feelings and the small first moves (the 2 A.M. math, 'where did the money go, not why', permission to go slowly).",
   "offer": "free",
   "cover_mood": "phone",
-  "caption": "Where did the money go? That is the only question for today.\nNot why. Not what you should have done.\nOpen your bank app, take the last 30 days, and give each spend a one-word label.\nGroup them into a few piles, add them up roughly, and stop when 20 minutes are up.\nSave this for a quiet hour this week.\nIf you want one page to write it all down, the free Three Numbers Starter Sheet is at the link in bio.\nDay one counts.\n\nGeneral education, not financial advice.\n\n#lifeafterdivorce #startingover #moneybasics #divorcedwomen #financialfirststeps",
+  "caption": "Where did the money go? That is the only question for today.\nOpen your bank app, take the last 30 days, and give each spend a one-word label.\nGroup them into a few piles, add them up roughly, and stop when 20 minutes are up.\nSave this for a quiet hour this week.\nIf you want one page to write it all down, the free Three Numbers Starter Sheet is at the link in bio.\nDay one counts.\n\nGeneral education, not financial advice.\n\n#lifeafterdivorce #startingover #moneybasics #divorcedwomen #financialfirststeps",
   "images": [
     "drafts/2026-11-14/01.jpg",
     "drafts/2026-11-14/02.jpg",
@@ -13,5 +13,65 @@
     "drafts/2026-11-14/05.jpg",
     "drafts/2026-11-14/06.jpg",
     "drafts/2026-11-14/07.jpg"
+  ],
+  "slides": [
+    {
+      "type": "cover",
+      "title": "Where did the money go?",
+      "subtitle": "A 20-minute look, no blame"
+    },
+    {
+      "type": "text",
+      "kicker": "START HERE",
+      "title": "You are allowed to just look",
+      "body": "Before budgets or big plans, there is one small move. Look at where your money went last month. The why can wait.",
+      "items": []
+    },
+    {
+      "type": "list",
+      "kicker": "GATHER",
+      "title": "What you need",
+      "body": "",
+      "items": [
+        "Your phone or laptop",
+        "Your bank app or last month's statement",
+        "A notebook or a notes app",
+        "A timer set for 20 minutes"
+      ]
+    },
+    {
+      "type": "list",
+      "kicker": "THE STEP",
+      "title": "The 20-minute look",
+      "body": "",
+      "items": [
+        "Pick one account and the last 30 days",
+        "Give each spend a one-word label: food, gas, home, phone",
+        "Group the labels into 5 or 6 simple piles",
+        "Add up each pile. Rough numbers are fine.",
+        "Stop when the timer ends, even if you are not done"
+      ]
+    },
+    {
+      "type": "text",
+      "kicker": "THE KIND PART",
+      "title": "Leave the why in the margin",
+      "body": "If a thought starts with the words I should not have, jot it in the margin and keep going. Today you are collecting facts. Facts are calm. They do not need you to defend them.",
+      "items": []
+    },
+    {
+      "type": "text",
+      "kicker": "WHY IT HELPS",
+      "title": "This becomes one of your Three Numbers",
+      "body": "Those piles show you what goes out. Once you can see it, the next steps feel less scary. You do not have to decide or change anything today. Seeing is enough.",
+      "items": []
+    },
+    {
+      "type": "cta",
+      "kicker": "SAVE THIS",
+      "title": "Keep this for a quiet hour",
+      "body": "Want one page to write your piles on? The free Three Numbers Starter Sheet is made for this. You can grab it through the link in bio. Day one counts.",
+      "items": []
+    }
   ]
 }
