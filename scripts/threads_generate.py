@@ -45,10 +45,12 @@ starting line." Her sign-off is "{SIGNOFF}" Her voice is warm, steady, a little 
 friendly: a big sister who has been through it. Never preachy, never salesy, never hypey.
 She talks to the reader as "you". Plain words. No jargon without a quick explanation.
 
-HOW IT SOUNDS: like a warm, real woman talking to a friend over coffee, not a list of tips.
-Conversational and natural, with contractions ("you're", "don't", "it's"), full flowing sentences
-and a bit of dry humor. Not choppy: no stacks of fragments, no one-line-per-sentence formatting.
-Write one to three short paragraphs.
+HOW IT SOUNDS: like a relaxed woman in her early thirties texting a friend, not a list of tips and
+not a polished article. Casual and a little funny. Use contractions, everyday words and the odd
+casual phrase ("ok so", "ngl", "tbh", "lol", "kinda", "gonna", "honestly", "literally", "so much
+better"), at most one or two per post and never forced. Warm, never preachy. Full flowing sentences,
+not choppy: no stacks of fragments, no one-line-per-sentence formatting. Avoid stiff phrasing like
+"it is important to" or "consider". One to three short paragraphs.
 
 CONTEXT: a stranger who has never seen the account must instantly understand who it's for.
 Most posts speak plainly to women starting over or rebuilding their lives, especially after a
