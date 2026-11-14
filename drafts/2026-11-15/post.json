@@ -14,5 +14,76 @@
     "drafts/2026-11-15/06.jpg",
     "drafts/2026-11-15/07.jpg",
     "drafts/2026-11-15/08.jpg"
+  ],
+  "slides": [
+    {
+      "type": "cover",
+      "title": "Your Sunday money reset, in twenty minutes",
+      "subtitle": "Three numbers. One small step."
+    },
+    {
+      "type": "text",
+      "kicker": "THE MONTHLY TWENTY",
+      "title": "A check-in you can finish",
+      "body": "Once a month, or once a week if that feels better, you sit down for twenty minutes. You look at your numbers, notice what changed, and pick one small thing. That is the whole job.",
+      "items": []
+    },
+    {
+      "type": "list",
+      "kicker": "STEP ONE",
+      "title": "Set it up in two minutes",
+      "body": "",
+      "items": [
+        "Set a timer for twenty minutes.",
+        "Grab your phone or laptop and last month's notes.",
+        "Open your bank app and any card apps.",
+        "Make tea or coffee. This is allowed to be nice."
+      ]
+    },
+    {
+      "type": "list",
+      "kicker": "STEP TWO",
+      "title": "Look at your Three Numbers again",
+      "body": "",
+      "items": [
+        "What came in this month?",
+        "What went out this month?",
+        "How many months could you keep going?",
+        "Write each one down. Rough is fine."
+      ]
+    },
+    {
+      "type": "text",
+      "kicker": "EXAMPLE WITH MADE-UP NUMBERS",
+      "title": "What it can look like",
+      "body": "Say 3,000 came in, 2,800 went out, and you have 1,400 set aside. That is about half a month of going. It is simply where you are today.",
+      "items": []
+    },
+    {
+      "type": "list",
+      "kicker": "STEP THREE",
+      "title": "Then pick just one step",
+      "body": "",
+      "items": [
+        "Keep: name one thing that is worth it to protect.",
+        "Cut: cancel one charge you forgot about.",
+        "Earn: jot down one idea, no pressure to act.",
+        "Build: add one line to your plan for next month."
+      ]
+    },
+    {
+      "type": "text",
+      "kicker": "STEP FOUR",
+      "title": "Then close the laptop",
+      "body": "Write today's date and your one step on a sticky note. Then stop. Twenty minutes is enough. You can come back next month, or next Sunday.",
+      "items": []
+    },
+    {
+      "type": "cta",
+      "kicker": "SAVE THIS",
+      "title": "Save this for your next reset",
+      "body": "If you want one place to keep your numbers each month, the Day Zero Workbook has pages for it. It is a 32-page guide in my Stan store, link in bio. Day one counts.",
+      "items": []
+    }
   ]
 }
