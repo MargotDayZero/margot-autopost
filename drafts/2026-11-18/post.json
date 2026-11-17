@@ -1,0 +1,78 @@
+{
+  "date": "2026-11-18",
+  "topic": "CUT: a calm 20-minute autopay hunt on one statement to find repeating charges and cancel the easiest no",
+  "pillar": "CUT: finding quiet leaks (autopay, subscriptions, things nobody uses) and how to look at them calmly.",
+  "offer": "free",
+  "cover_mood": "laptop",
+  "caption": "There may be a charge on your statement that renews without asking you.\nToday, open one statement and look for anything that repeats.\nWrite each one down with the amount and the date.\nAsk yourself, did I use this last month? Then cancel the easiest no.\nSave this for the next time a statement lands.\nThe free Three Numbers Starter Sheet is waiting at my Stan store, link in bio.\nDay one counts.\n\nGeneral education, not financial advice.\n\n#lifeafterdivorce #subscriptionaudit #budgetingbasics #moneyafterdivorce #startingover",
+  "slides": [
+    {
+      "type": "cover",
+      "title": "Find the charges that renew while you sleep",
+      "subtitle": "A calm 20-minute autopay check"
+    },
+    {
+      "type": "text",
+      "kicker": "Today's step",
+      "title": "Look for repeats on one statement",
+      "body": "Open last month's card or bank statement. You are looking for one thing today: charges that show up on their own, every month or every year.",
+      "items": []
+    },
+    {
+      "type": "list",
+      "kicker": "About 20 minutes",
+      "title": "The autopay hunt",
+      "body": "",
+      "items": [
+        "Pull up one statement on your phone or laptop",
+        "Mark anything that charged without you pressing pay",
+        "Write each one down with the amount and the date",
+        "Search your email for the words renewal and receipt",
+        "Check the subscriptions page in your phone settings"
+      ]
+    },
+    {
+      "type": "text",
+      "kicker": "One question",
+      "title": "Ask one thing about each charge",
+      "body": "Next to each one, write: did I use this in the last month? Yes, no, or not sure. Not sure is a fine answer. You can come back to it next week.",
+      "items": []
+    },
+    {
+      "type": "list",
+      "kicker": "Quiet leaks",
+      "title": "Common ones to look for",
+      "body": "",
+      "items": [
+        "A streaming service still on an old shared login",
+        "A free trial that quietly turned paid",
+        "Extra cloud storage or a phone plan add-on",
+        "A membership nobody has used in months",
+        "A yearly renewal that only shows up once"
+      ]
+    },
+    {
+      "type": "text",
+      "kicker": "Then",
+      "title": "Cancel the easiest no",
+      "body": "Pick one charge that is a clear no and cancel it today. Check your Keep List first so what is worth it stays. If a charge ties to a joint account or settlement, a licensed professional can help.",
+      "items": []
+    },
+    {
+      "type": "cta",
+      "kicker": "Save this",
+      "title": "Bring it to your first number",
+      "body": "Save this for your next statement. Write what you cut on the free Three Numbers Starter Sheet, at my Stan store, link in bio. Day one counts.",
+      "items": []
+    }
+  ],
+  "images": [
+    "drafts/2026-11-18/01.jpg",
+    "drafts/2026-11-18/02.jpg",
+    "drafts/2026-11-18/03.jpg",
+    "drafts/2026-11-18/04.jpg",
+    "drafts/2026-11-18/05.jpg",
+    "drafts/2026-11-18/06.jpg",
+    "drafts/2026-11-18/07.jpg"
+  ]
+}
