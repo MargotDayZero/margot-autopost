@@ -1,0 +1,77 @@
+{
+  "date": "2026-11-20",
+  "topic": "BUILD: a 20-minute one-page list of every account that has your name on it, with shared accounts marked for later",
+  "pillar": "BUILD: the first-hour setup and slow foundations (list your accounts, pull your credit report, change passwords, list bills, a small cushion).",
+  "offer": "workbook",
+  "cover_mood": "notebook",
+  "caption": "Do you know every account that has your name on it?\n\nToday's BUILD step is one sheet of paper and about twenty minutes.\nOpen your banking app, last month's statements and that pile of mail.\nFor each account, write the name, what it is, whether it's shared, and who can log in.\nPut a star next to the shared ones. You don't have to fix anything today.\n\nSave this for when you have a quiet twenty minutes.\nIf you'd like a page made for this list, The Day Zero Workbook has one. It's in my Stan store, link in bio.\n\nIf someone else controls your accounts and you feel unsafe, the National Domestic Violence Hotline is 1-800-799-7233.\n\nDay one counts.\n\nGeneral education, not financial advice.\n\n#lifeafterdivorce #divorcedwomen #moneybasics #financialfirststeps #startingover",
+  "slides": [
+    {
+      "type": "cover",
+      "title": "Every account with your name on it",
+      "subtitle": "A one-page list in 20 minutes"
+    },
+    {
+      "type": "text",
+      "kicker": "BUILD",
+      "title": "Start with one sheet of paper",
+      "body": "Before you plan anything, it helps to know what exists. Today's step is a list of every account that has your name on it. One page. About twenty minutes.",
+      "items": []
+    },
+    {
+      "type": "list",
+      "kicker": "Where to look",
+      "title": "Pull up these first",
+      "body": "",
+      "items": [
+        "Your banking app and any old bank emails",
+        "Last month's credit card and loan statements",
+        "Your phone bill, insurance and utilities",
+        "Retirement or work accounts from any job, old or current",
+        "The mail you have been meaning to open"
+      ]
+    },
+    {
+      "type": "list",
+      "kicker": "For each account",
+      "title": "Write down four things",
+      "body": "",
+      "items": [
+        "The name of the place, like your bank or card company",
+        "What it is: checking, savings, card, loan, or a bill",
+        "Yours alone, or shared with someone else",
+        "Who can log in or see it today"
+      ]
+    },
+    {
+      "type": "text",
+      "kicker": "Shared accounts",
+      "title": "Put a star next to the shared ones",
+      "body": "Joint accounts and shared logins are the ones to look at first. You do not have to change anything today. A star is enough. A licensed professional can help with the next steps.",
+      "items": []
+    },
+    {
+      "type": "text",
+      "kicker": "Gaps are normal",
+      "title": "Missing a statement? Write FIND and keep going",
+      "body": "If you can't find a login or a statement, write the word FIND next to it and move on. A half-finished list still shows you more than you could see this morning.",
+      "items": []
+    },
+    {
+      "type": "cta",
+      "kicker": "Save this",
+      "title": "Keep your list somewhere safe",
+      "body": "Save this post for the twenty minutes you set aside. The Day Zero Workbook has a page made for this list, if you want one. It's in my Stan store, link in bio. Day one counts.",
+      "items": []
+    }
+  ],
+  "images": [
+    "drafts/2026-11-20/01.jpg",
+    "drafts/2026-11-20/02.jpg",
+    "drafts/2026-11-20/03.jpg",
+    "drafts/2026-11-20/04.jpg",
+    "drafts/2026-11-20/05.jpg",
+    "drafts/2026-11-20/06.jpg",
+    "drafts/2026-11-20/07.jpg"
+  ]
+}
