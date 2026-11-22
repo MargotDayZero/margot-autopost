@@ -1,0 +1,77 @@
+{
+  "date": "2026-11-23",
+  "topic": "Finding once-a-year bills with a 20-minute email search and turning them into a monthly amount for your second number",
+  "pillar": "The Three Numbers (what's coming in, what goes out, how many months you could keep going). Boring Money Monday.",
+  "offer": "free",
+  "cover_mood": "laptop",
+  "caption": "Some bills only show up once a year, and they always seem to pick an awkward month.\nToday, search your email for words like renewal, annual and registration.\nWrite each bill on one page with the amount and the month it arrives.\nAdd them up, divide by 12, and add that to your second number.\nSave this so you can do it with your coffee next Monday.\nThe free Three Numbers Starter Sheet is in my Stan store, link in bio.\nDay one counts.\n\nGeneral education, not financial advice.\n\n#boringmoneymonday #moneyafterdivorce #startingover #budgetingbasics #threenumbers",
+  "slides": [
+    {
+      "type": "cover",
+      "title": "The bills that only show up once a year",
+      "subtitle": "A 20-minute email search for Monday"
+    },
+    {
+      "type": "text",
+      "kicker": "Boring Money Monday",
+      "title": "Your second number has quiet pieces",
+      "body": "Your second number is what goes out each month. A few bills only arrive once or twice a year, so they slip off the list. Today you go find them in your email.",
+      "items": []
+    },
+    {
+      "type": "list",
+      "kicker": "Step one",
+      "title": "Search your inbox for these words",
+      "body": "Open your email on your phone or laptop. Try each word in the search bar.",
+      "items": [
+        "Renewal",
+        "Annual",
+        "Your policy",
+        "Registration",
+        "Membership"
+      ]
+    },
+    {
+      "type": "list",
+      "kicker": "Step two",
+      "title": "Write each one on a single page",
+      "body": "Keep it simple. One line per bill.",
+      "items": [
+        "The name of the bill",
+        "About how much it was last time",
+        "The month it usually shows up",
+        "A question mark if you are not sure"
+      ]
+    },
+    {
+      "type": "text",
+      "kicker": "Step three",
+      "title": "Turn the list into a monthly amount",
+      "body": "Example with made-up numbers: car registration 120, home insurance 600. Together that's 720. Divide by 12 and you get 60 a month to add to your second number.",
+      "items": []
+    },
+    {
+      "type": "text",
+      "kicker": "If it feels tangled",
+      "title": "Some bills need a second pair of eyes",
+      "body": "Property taxes or anything tied to your settlement can be tricky. A licensed professional can help with the details. For today, the list is enough.",
+      "items": []
+    },
+    {
+      "type": "cta",
+      "kicker": "Save this",
+      "title": "Keep this page with your numbers",
+      "body": "Save this for next Monday. The free Three Numbers Starter Sheet has a spot for these bills. It's in my Stan store, link in bio. Day one counts.",
+      "items": []
+    }
+  ],
+  "images": [
+    "drafts/2026-11-23/01.jpg",
+    "drafts/2026-11-23/02.jpg",
+    "drafts/2026-11-23/03.jpg",
+    "drafts/2026-11-23/04.jpg",
+    "drafts/2026-11-23/05.jpg",
+    "drafts/2026-11-23/06.jpg",
+    "drafts/2026-11-23/07.jpg"
+  ]
+}
