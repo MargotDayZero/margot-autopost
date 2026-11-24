@@ -1,0 +1,76 @@
+{
+  "date": "2026-11-25",
+  "topic": "CUT: a 15-minute look at the Subscriptions page in your phone's app store account, marking apps nobody opens and canceling the easiest one",
+  "pillar": "CUT: finding quiet leaks (autopay, subscriptions, things nobody uses) and how to look at them calmly.",
+  "offer": "free",
+  "cover_mood": "phone",
+  "caption": "Your phone already keeps a list of what you pay for every month.\nIt's the Subscriptions page in your app store account.\nWrite down each app, what it costs, and when it renews.\nMark the ones nobody opens. Cancel the easiest one and write down the date.\nSave this for a quiet fifteen minutes this week.\nThe free Three Numbers Starter Sheet is a good home for what you find, link in bio.\nDay one counts.\n\nGeneral education, not financial advice.\n\n#divorcerecovery #startingover #budgetingbasics #subscriptions #moneyafterdivorce",
+  "slides": [
+    {
+      "type": "cover",
+      "title": "The subscriptions hiding in your phone",
+      "subtitle": "A calm fifteen-minute look"
+    },
+    {
+      "type": "text",
+      "kicker": "CUT",
+      "title": "Your phone keeps a list for you",
+      "body": "On most phones, your app store account has a page called Subscriptions. It shows what renews and when. You can do this one from the couch.",
+      "items": []
+    },
+    {
+      "type": "list",
+      "kicker": "STEP ONE",
+      "title": "Find the page",
+      "body": "",
+      "items": [
+        "Open your app store and tap your name or photo",
+        "Look for Subscriptions in the account menu",
+        "Can't find it? Search your phone settings for subscriptions",
+        "Grab a pen and paper, or open a notes app"
+      ]
+    },
+    {
+      "type": "list",
+      "kicker": "STEP TWO",
+      "title": "Write down each one",
+      "body": "",
+      "items": [
+        "The name of the app",
+        "What it costs and how often it charges",
+        "The next renewal date",
+        "The last time anyone actually opened it"
+      ]
+    },
+    {
+      "type": "text",
+      "kicker": "STEP THREE",
+      "title": "The nobody-opens-it test",
+      "body": "Put a small mark next to anything nobody in your home opened this month. Those are your quiet leaks. If one is worth it to you, leave it alone. That counts as a decision too.",
+      "items": []
+    },
+    {
+      "type": "text",
+      "kicker": "STEP FOUR",
+      "title": "Cancel the easiest one",
+      "body": "Pick one marked app and tap cancel. Read the screen, it usually tells you when access ends. Write that date down. Then close the page. One is plenty for today.",
+      "items": []
+    },
+    {
+      "type": "cta",
+      "kicker": "SAVE THIS",
+      "title": "Save it for a quiet fifteen minutes",
+      "body": "Want one place to write what you cut? The free Three Numbers Starter Sheet is a single page. It's at my Stan store, link in bio. Day one counts.",
+      "items": []
+    }
+  ],
+  "images": [
+    "drafts/2026-11-25/01.jpg",
+    "drafts/2026-11-25/02.jpg",
+    "drafts/2026-11-25/03.jpg",
+    "drafts/2026-11-25/04.jpg",
+    "drafts/2026-11-25/05.jpg",
+    "drafts/2026-11-25/06.jpg",
+    "drafts/2026-11-25/07.jpg"
+  ]
+}
